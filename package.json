@@ -44,7 +44,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "vue": "^2.6.14",
-    "vue-amis-editor": "^1.0.1",
+    "vue-amis-editor": "git+ssh://git@github.com:h7ml/vue-amis-editor.git",
     "vue-router": "2.6.0",
     "vuera": "^0.2.7",
     "vuex": "3.6.2",

@@ -1,5 +1,5 @@
 <template>
-  <vue-amis-editor :is-preview="preview" :value="schema" />
+  <vue-amis-editor :is-preview="preview" :toolbar="toolbar" :value="schema" />
 </template>
 
 <script>
@@ -11,6 +11,16 @@ export default {
   },
   data() {
     return {
+      toolbar: {
+        title: 'vue-amis-editor',
+        preview: '预览',
+        release: '发布',
+        edit: '编辑',
+        obtain: '获取',
+        copy: '拷贝',
+        clear: '清空',
+        set: '设置'
+      },
       preview: false,
       schema: {
         type: 'tasks',
