@@ -112,7 +112,7 @@ jobs:
       - name: yarn script 🚀
         run: |
           yarn install
-          yarn build &> /dev/null
+          yarn build
       - name: Deploy to Netlify  🚀
         uses: nwtgck/actions-netlify@v1.2
         with:
