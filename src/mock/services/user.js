@@ -1,7 +1,7 @@
 import Mock from 'mockjs2'
 import { builder } from '../util'
 
-const info = options => {
+const info = (options) => {
   console.log('options', options)
   const userInfo = {
     id: '4291d7da9005377ec9aec4a71ea837f',
@@ -472,7 +472,7 @@ const info = options => {
  * @param {*} options
  * @returns
  */
-const userNav = options => {
+const userNav = (options) => {
   const nav = [
     // dashboard
     {
@@ -519,7 +519,6 @@ const userNav = options => {
       component: 'Analysis',
       path: '/dashboard/analysis'
     },
-
     // form
     {
       name: 'form',

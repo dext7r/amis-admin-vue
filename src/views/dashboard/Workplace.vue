@@ -109,8 +109,11 @@
             :body-style="{ padding: 0 }"
           >
             <div style="min-height: 400px;">
-              <!-- :scale="scale" :axis1Opts="axis1Opts" :axis2Opts="axis2Opts"  -->
-              <radar :data="radarData" />
+              <radar
+                :data="radarData"
+                :scale="scale"
+                :axis1Opts="axis1Opts"
+                :axis2Opts="axis2Opts" />
             </div>
           </a-card>
           <a-card :loading="loading" title="团队" :bordered="false">
@@ -136,7 +139,6 @@ import { timeFix } from '@/utils/util'
 import { mapState } from 'vuex'
 import { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
 import { Radar } from '@/components'
-
 import { getRoleList, getServiceList } from '@/api/manage'
 
 const DataSet = require('@antv/data-set')
