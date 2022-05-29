@@ -4,7 +4,7 @@
 
 [![deploy](https://github.com/h7ml/amis-admin-vue/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/h7ml/amis-admin-vue/actions/workflows/deploy.yml)
 [![license](https://img.shields.io/github/license/h7ml/amis-admin-vue.svg)](https://github.com/h7ml/amis-admin-vue/blob/master/LICENSE#L1)
-[![version](https://img.shields.io/npm/v/amis/latest)](https://github.com/h7ml/amis-admin-vue/blob/master/package.json#L36)
+[![version](https://img.shields.io/npm/v/vue-amis-sdk/latest)](https://github.com/h7ml/vue-amis-sdk)
 [![language](https://img.shields.io/github/languages/top/h7ml/amis-admin-vue)](https://github.com/h7ml/amis-admin-vue/search?l=css)
 [![last](https://img.shields.io/github/last-commit/h7ml/amis-admin-vue.svg)](https://github.com/h7ml/amis-admin-vue/commits)
 [![stars](https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&logo=Vercel)](https://amis.vercel.app/)

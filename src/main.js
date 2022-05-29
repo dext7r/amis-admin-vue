@@ -7,6 +7,11 @@ import 'amis/lib/helper.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 require('./registerServiceWorker')
+import VueAmisSdk from 'vue-amis-sdk/packages/index'
+Vue.use(VueAmisSdk)
+console.log(VueAmisSdk)
+import { VuePlugin } from 'vuera'
+Vue.use(VuePlugin)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 import store from './store'
