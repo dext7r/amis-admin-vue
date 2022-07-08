@@ -1,7 +1,7 @@
 name: claer
 on:
   push:
-    branches: [ check ]
+    branches: [check]
   workflow_dispatch:
 env:
   TZ: Asia/Shanghai

@@ -6,7 +6,7 @@
 // import "amis/lib/themes/default.css";
 // import "amis/lib/themes/antd.css";
 // import "amis/lib/themes/cxd.css";
-import {alert, confirm, render as renderSchema, toast} from 'amis'
+import { alert, confirm, render as renderSchema, toast } from 'amis'
 import copy from 'copy-to-clipboard'
 import ReactDOM from 'react-dom'
 import * as qs from 'qs'
@@ -25,14 +25,12 @@ export default {
     updateLocation: {
       type: Function,
       required: false,
-      default: () => {
-      }
+      default: () => {}
     },
     onAction: {
       type: Function,
       required: false,
-      default: () => {
-      }
+      default: () => {}
     }
   },
   data() {
@@ -86,7 +84,7 @@ export default {
           }
           return false
         },
-        fetcher: ({url, method, data, config, headers}) => {
+        fetcher: ({ url, method, data, config, headers }) => {
           config = config || {}
           config.headers = config.headers || {}
           config.withCredentials = true
@@ -136,8 +134,8 @@ export default {
         copy: (contents, options = {}) => {
           const ret = copy(contents, options)
           ret &&
-          (!options || options.shutup !== true) &&
-          toast.info('内容已拷贝到剪切板')
+            (!options || options.shutup !== true) &&
+            toast.info('内容已拷贝到剪切板')
           return ret
         }
       }
@@ -171,8 +169,8 @@ export default {
       let pathname = ~idx
         ? to.substring(0, idx)
         : ~idx2
-          ? to.substring(0, idx2)
-          : to
+        ? to.substring(0, idx2)
+        : to
       const search = ~idx ? to.substring(idx, ~idx2 ? idx2 : undefined) : ''
       const hash = ~idx2 ? to.substring(idx2) : ''
       if (!pathname) {

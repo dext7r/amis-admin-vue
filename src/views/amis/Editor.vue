@@ -55,8 +55,7 @@
 <script>
 export default {
   name: 'Editor',
-  components: {
-  },
+  components: {},
   data() {
     return {
       setting: {

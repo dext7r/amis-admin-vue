@@ -1,7 +1,9 @@
 name: deploy
 on:
+  schedule:
+    - cron: '30 06 * * *'
   push:
-    branches: [ master,dev ]
+    branches: [master, dev]
   workflow_dispatch:
 
 # 设置上海时区
@@ -19,7 +21,7 @@ jobs:
           dst: gitee/h7ml
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
-          white_list: "amis-admin-vue" # 只同步amis-admin-vue
+          white_list: 'amis-admin-vue' # 只同步amis-admin-vue
           force_update: true
           account_type: user
           clone_style: ssh
@@ -29,8 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ latest ]
-        yarn-version: [ latest ]
+        node-version: [latest]
+        yarn-version: [latest]
     # 任务执行的步骤
     steps:
       # 步骤名称
@@ -69,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ latest,current,stable ]
+        node-version: [latest, current, stable]
     steps:
       - name: Checkout 🚀
         uses: actions/checkout@v2
@@ -94,7 +96,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ latest ]
+        node-version: [latest]
     steps:
       - name: Checkout 🚀
         uses: actions/checkout@v2
@@ -119,7 +121,7 @@ jobs:
           publish-dir: './dist'
           production-branch: master
           github-token: ${{ secrets.GIT_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
+          deploy-message: 'Deploy from GitHub Actions'
           enable-pull-request-comment: false
           enable-commit-comment: true
           netlify-config-path: './dist/netlify.toml'
