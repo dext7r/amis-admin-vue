@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/amis-admin-vue/precache-manifest.df87aecf3c1cf2e02a30094338205199.js"
+  "/amis-admin-vue/precache-manifest.77605fb996f7949cd14320bf5ff08c9d.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "amis-admin-vue"});
