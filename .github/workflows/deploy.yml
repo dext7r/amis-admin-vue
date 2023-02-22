@@ -31,8 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [latest]
-        yarn-version: [latest]
+        node-version: [ 16.19.1 ]
+        yarn-version: [ 1.22.19 ]
     # 任务执行的步骤
     steps:
       # 步骤名称
@@ -40,6 +40,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }} 🚀
         uses: actions/setup-node@v2
+        with:
+          node-version: 16.19.1
       - name: Cache yarn modules  🚀
         uses: actions/cache@v2
         env:
@@ -77,6 +79,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }} 🚀
         uses: actions/setup-node@v2
+        with:
+          node-version: 16.19.1
       - name: Cache yarn modules  🚀
         uses: actions/cache@v2
         env:
@@ -96,12 +100,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [latest]
+        node-version: [ 16.19.1 ]
+        yarn-version: [ 1.22.19 ]
     steps:
       - name: Checkout 🚀
         uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }} 🚀
         uses: actions/setup-node@v2
+        with:
+          node-version: 16.19.1
       - name: Cache yarn modules  🚀
         uses: actions/cache@v2
         env:
@@ -184,4 +191,35 @@ jobs:
           runs: 5
           uploadArtifacts: true
           configPath: './.github/workflows/setup/lighthouse-audit.json'
+    needs: build
+
+  clean:
+    name: Clean
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Asia/Shanghai
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: 'Apocalypsor/Workflows-Cleaner'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install pipenv
+        run: python -m pip install --upgrade pipenv wheel
+      - name: Install dependencies
+        run: |
+          pipenv requirements > requirements.txt
+          pip install -r requirements.txt
+      - name: Clean
+        env:
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
+          EXPIRE_TIME: '12h'
+        run: python run.py
     needs: build
