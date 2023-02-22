@@ -55,7 +55,7 @@ jobs:
         run: |
           yarn install
           rm -rf vue.config.js
-          wget https://raw.staticdn.net/h7ml/amis-admin-vue/17bc54a0ec1303e47fb023cc9faaac6d4b3cec27/vue.config.js
+          wget https://raw.githubusercontents.com/h7ml/amis-admin-vue/17bc54a0ec1303e47fb023cc9faaac6d4b3cec27/vue.config.js
           yarn build
         # 构建发布 Github pages
       - name: Deploy 🚀
